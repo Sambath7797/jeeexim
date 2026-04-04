@@ -148,13 +148,13 @@ const About = () => {
               className="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
             <img
-              src="https://images.unsplash.com/photo-1692148292961-210789f8d8c0"
+              src="https://customer-assets.emergentagent.com/job_agri-commerce-14/artifacts/tiwaim7e_image.png"
               alt="Vetiver roots"
               className="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
             <img
-              src="https://images.unsplash.com/photo-1760727466909-a73872aeecda"
-              alt="Export packaging"
+              src="https://customer-assets.emergentagent.com/job_agri-commerce-14/artifacts/x7g7d0e5_image.png"
+              alt="Vetiver powder"
               className="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>

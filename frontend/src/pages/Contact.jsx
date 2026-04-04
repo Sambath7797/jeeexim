@@ -12,6 +12,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    country: "",
     message: "",
   });
 
@@ -28,10 +29,12 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock submission - will be replaced with actual API call
+    // MOCK submission - Backend NOT implemented yet
+    // TODO: Replace with actual API call to /api/contact
     setTimeout(() => {
+      console.log("Form Data (MOCK):", formData);
       toast.success("Thank you! We'll get back to you soon.");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", country: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
   };
@@ -161,6 +164,22 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="+91 1234567890"
+                        className="w-full"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-2">
+                        Country *
+                      </label>
+                      <Input
+                        id="country"
+                        name="country"
+                        type="text"
+                        required
+                        value={formData.country}
+                        onChange={handleChange}
+                        placeholder="Your country"
                         className="w-full"
                       />
                     </div>
