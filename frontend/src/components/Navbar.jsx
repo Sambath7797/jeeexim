@@ -22,16 +22,16 @@ const Navbar = () => {
       <div className="bg-emerald-900 text-white py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between text-sm">
           <div className="flex items-center gap-4">
-            <a href={`tel:${companyInfo.phone1}`} className="flex items-center gap-1 hover:text-emerald-200 transition-colors">
+            <a href={`tel:${companyInfo.phone1}`} className="flex items-center gap-1 hover:text-amber-200 transition-colors">
               <Phone size={14} />
               <span>{companyInfo.phone1}</span>
             </a>
-            <a href={`mailto:${companyInfo.email}`} className="flex items-center gap-1 hover:text-emerald-200 transition-colors">
+            <a href={`mailto:${companyInfo.email}`} className="flex items-center gap-1 hover:text-amber-200 transition-colors">
               <Mail size={14} />
               <span className="hidden sm:inline">{companyInfo.email}</span>
             </a>
           </div>
-          <div className="text-emerald-200">Export Worldwide | Made in India</div>
+          <div className="text-amber-200">Export Worldwide | Made in India</div>
         </div>
       </div>
 
@@ -42,8 +42,8 @@ const Navbar = () => {
             {/* Logo */}
             <Link to="/" className="flex items-center">
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-emerald-800">{companyInfo.name}</span>
-                <span className="text-xs text-amber-700 font-medium">Organic Vetiver Exports</span>
+                <span className="text-2xl font-bold text-amber-900">{companyInfo.name}</span>
+                <span className="text-xs text-amber-700 font-medium">Organic Vetiver Manufacturer</span>
               </div>
             </Link>
 
@@ -55,13 +55,13 @@ const Navbar = () => {
                   to={link.path}
                   className={`font-medium transition-colors relative ${
                     isActive(link.path)
-                      ? "text-emerald-700"
-                      : "text-gray-700 hover:text-emerald-600"
+                      ? "text-amber-800"
+                      : "text-gray-700 hover:text-amber-700"
                   }`}
                 >
                   {link.name}
                   {isActive(link.path) && (
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-700"></span>
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-amber-800"></span>
                   )}
                 </Link>
               ))}
@@ -70,7 +70,7 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-700 hover:text-emerald-700 transition-colors"
+              className="md:hidden text-gray-700 hover:text-amber-800 transition-colors"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -88,8 +88,8 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`block py-2 font-medium transition-colors ${
                     isActive(link.path)
-                      ? "text-emerald-700"
-                      : "text-gray-700 hover:text-emerald-600"
+                      ? "text-amber-800"
+                      : "text-gray-700 hover:text-amber-700"
                   }`}
                 >
                   {link.name}

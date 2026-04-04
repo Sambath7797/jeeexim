@@ -6,7 +6,7 @@ export const companyInfo = {
   phone1: "+91 9345357386",
   phone2: "+91 8754371909",
   email: "jeeexportsandimports@gmail.com",
-  description: "Leading producer and exporter of premium organic vetiver products, committed to purity, sustainability, and international quality standards.",
+  description: "Leading manufacturer of premium organic vetiver products, committed to purity, sustainability, and international quality standards.",
 };
 
 export const products = [
@@ -24,7 +24,7 @@ export const products = [
     description: "Cleaned and dried vetiver roots, perfect for cooling, aromatic, and herbal applications.",
     features: ["Cleaned & Dried", "100% Organic", "Premium Quality", "Export Grade"],
     applications: ["Herbal Medicine", "Cooling Applications", "Aromatic Uses", "Traditional Medicine"],
-    image: "https://images.unsplash.com/photo-1692148292961-210789f8d8c0",
+    image: "https://images.unsplash.com/photo-1714929756975-977b8470f6bd",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const products = [
     description: "Finely processed vetiver powder, widely used in skincare formulations and herbal products.",
     features: ["Finely Processed", "Premium Grade", "100% Natural", "Versatile Use"],
     applications: ["Skincare Products", "Herbal Formulations", "Cosmetic Manufacturing", "Traditional Remedies"],
-    image: "https://images.unsplash.com/photo-1641296834707-bbe46429d945",
+    image: "https://images.unsplash.com/photo-1534159335360-c1e0e116c444",
   },
 ];
 
@@ -48,24 +48,24 @@ export const whyChooseUs = [
     icon: "Award",
   },
   {
+    title: "Direct Manufacturing",
+    description: "In-house manufacturing facility ensures complete control over quality and eliminates middlemen.",
+    icon: "Factory",
+  },
+  {
+    title: "Strict Quality Control",
+    description: "Rigorous quality checks at every production stage, from raw material to finished product.",
+    icon: "ShieldCheck",
+  },
+  {
     title: "Bulk Supply Capability",
     description: "Equipped to handle large-scale orders with consistent quality and timely delivery.",
     icon: "Package",
   },
   {
     title: "Competitive Pricing",
-    description: "Direct sourcing and efficient processes allow us to offer premium products at competitive rates.",
+    description: "Direct manufacturing and efficient processes allow us to offer premium products at competitive rates.",
     icon: "DollarSign",
-  },
-  {
-    title: "Traceability & Transparency",
-    description: "Complete supply chain visibility from farm to shipment, ensuring trust and accountability.",
-    icon: "Eye",
-  },
-  {
-    title: "Global Delivery",
-    description: "Partnered with trusted logistics networks for safe, timely, and trackable worldwide shipping.",
-    icon: "Globe",
   },
 ];
 
