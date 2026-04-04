@@ -29,14 +29,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // MOCK submission - Backend NOT implemented yet
-    // TODO: Replace with actual API call to /api/contact
-    setTimeout(() => {
-      console.log("Form Data (MOCK):", formData);
-      toast.success("Thank you! We'll get back to you soon.");
-      setFormData({ name: "", email: "", phone: "", country: "", message: "" });
+    try {
+      const API_URL = process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${API_URL}/api/contact/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message || "Thank you! We'll get back to you soon.");
+        setFormData({ name: "", email: "", phone: "", country: "", message: "" });
+      } else {
+        toast.error(data.detail || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Failed to send message. Please try again or contact us directly.");
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
