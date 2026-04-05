@@ -45,6 +45,11 @@ const Navbar = () => {
                 src="https://customer-assets.emergentagent.com/job_agri-commerce-14/artifacts/xf7fmxjf_image.png" 
                 alt="JEE Exports & Imports Logo" 
                 className="h-12 w-auto"
+                style={{
+                  mixBlendMode: 'multiply',
+                  filter: 'contrast(1.5) brightness(0.8)',
+                  opacity: 0.9
+                }}
               />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-stone-800">{companyInfo.name}</span>

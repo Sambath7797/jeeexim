@@ -16,6 +16,10 @@ const Footer = () => {
                 src="https://customer-assets.emergentagent.com/job_agri-commerce-14/artifacts/xf7fmxjf_image.png" 
                 alt="JEE Exports & Imports Logo" 
                 className="h-10 w-auto"
+                style={{
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.85
+                }}
               />
               <h3 className="text-xl font-bold">{companyInfo.name}</h3>
             </div>
