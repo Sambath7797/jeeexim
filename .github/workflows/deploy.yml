@@ -29,19 +29,22 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Fix ajv module structure
+      - name: Remove problematic modules
         run: |
-          # Create the missing directory structure
-          mkdir -p node_modules/ajv/dist/compile
-          # Create a symlink or copy the codegen file
-          if [ -f node_modules/ajv/lib/compile/codegen.js ]; then
-            cp node_modules/ajv/lib/compile/codegen.js node_modules/ajv/dist/compile/codegen.js
-          elif [ -f node_modules/ajv/dist/compile/codegen.js ]; then
-            echo "File already exists"
-          else
-            # Create a basic codegen module as fallback
-            echo "module.exports = { CodeGen: class CodeGen { constructor() {} } };" > node_modules/ajv/dist/compile/codegen.js
-          fi
+          # Remove the problematic packages
+          rm -rf node_modules/ajv
+          rm -rf node_modules/ajv-formats
+          rm -rf node_modules/schema-utils
+          
+          # Also remove them from package-lock.json by reinstalling
+          npm uninstall ajv ajv-formats schema-utils --save
+
+      - name: Reinstall specific working versions
+        run: |
+          # Install compatible versions
+          npm install ajv@6.12.6 --save-exact --legacy-peer-deps
+          npm install ajv-formats@1.6.1 --save-exact --legacy-peer-deps
+          npm install schema-utils@3.3.0 --save-exact --legacy-peer-deps
 
       - name: Build app
         run: npm run build
