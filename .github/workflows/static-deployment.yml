@@ -31,6 +31,9 @@ jobs:
           rm -rf node_modules package-lock.json
           npm install --legacy-peer-deps
 
+      - name: Install ajv (peer resolution for Pages build)
+        run: npm install ajv@8.12.0 ajv-keywords@5.1.0 --save --legacy-peer-deps
+
       - name: Build app
         run: npm run build
 
