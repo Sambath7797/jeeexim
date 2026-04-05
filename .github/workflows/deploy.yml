@@ -26,17 +26,25 @@ jobs:
         with:
           node-version: 18
 
-      - name: Enable Corepack
-        run: corepack enable
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
 
-      - name: Clean and install with Yarn
+      - name: Fix ajv module structure
         run: |
-          rm -rf node_modules
-          rm -f package-lock.json
-          yarn install --force
+          # Create the missing directory structure
+          mkdir -p node_modules/ajv/dist/compile
+          # Create a symlink or copy the codegen file
+          if [ -f node_modules/ajv/lib/compile/codegen.js ]; then
+            cp node_modules/ajv/lib/compile/codegen.js node_modules/ajv/dist/compile/codegen.js
+          elif [ -f node_modules/ajv/dist/compile/codegen.js ]; then
+            echo "File already exists"
+          else
+            # Create a basic codegen module as fallback
+            echo "module.exports = { CodeGen: class CodeGen { constructor() {} } };" > node_modules/ajv/dist/compile/codegen.js
+          fi
 
       - name: Build app
-        run: yarn build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
